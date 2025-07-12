@@ -8,6 +8,24 @@ const renderWelcome = () => {
             <button class="cta-button">Get Started</button>
         </div>
     `;
+
+    const ctaButton = document.querySelector('.cta-button');
+    ctaButton.addEventListener('click', () => {
+        console.log('Get Started button clicked!');
+        alert('Get Started button clicked!');
+    });
+};
+
+const setupNavListeners = () => {
+    const navLinks = document.querySelectorAll('header nav a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', (event) => {
+            event.preventDefault();
+            console.log(`${link.textContent} link clicked!`);
+            alert(`${link.textContent} link clicked!`);
+        });
+    });
 };
 
 renderWelcome();
+setupNavListeners();
