@@ -1,15 +1,14 @@
 /* ======================= GENERAL STYLES & SETUP ======================= */
-/* Using your original font and color choices as the base */
 :root {
-  --bg-dark: #0f172a;
-  --bg-medium: #1e293b;
-  --text-primary: #d1d8e5;
-  --text-secondary: #94a3b8;
-  --accent-main: #6366f1;
-  --accent-hover: #4f46e5;
-  --accent-red: #e53e3e;
-  --border-color: #334155;
-  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --bg-dark: #111827;      /* Tailwind Gray 900 */
+  --bg-medium: #1F2937;   /* Tailwind Gray 800 */
+  --border-color: #374151; /* Tailwind Gray 700 */
+  --text-primary: #F9FAFB;   /* Tailwind Gray 50 */
+  --text-secondary: #9CA3AF; /* Tailwind Gray 400 */
+  --accent-main: #22d3ee;    /* Bright Cyan */
+  --accent-hover: #06b6d4;   /* Darker Cyan */
+  --accent-red: #ef4444;      /* Red 500 */
+  --font-family: 'Inter', sans-serif;
 }
 
 * {
@@ -23,6 +22,8 @@ body {
   background-color: var(--bg-dark);
   color: var(--text-primary);
   line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .page-container {
@@ -34,34 +35,33 @@ body {
 }
 
 /* ======================= LOGIN PAGE STYLES ======================= */
-
-
 .login-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
   max-width: 1100px;
   width: 100%;
   background-color: var(--bg-medium);
-  border-radius: 12px;
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
 }
 
-
 .welcome-panel {
-  padding: 3rem;
-  background: linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.9));
+  padding: 4rem;
+  background: var(--bg-dark);
 }
 
 .welcome-logo {
-  max-width: 150px;
-  margin-bottom: 1.5rem;
+  max-width: 120px;
+  margin-bottom: 2rem;
 }
 
 .welcome-panel h1 {
-  font-size: 2.25rem;
+  font-size: 2.5rem;
+  font-weight: 700;
   margin-bottom: 1rem;
-  color: #fff;
+  color: var(--text-primary);
 }
 
 .welcome-panel p {
@@ -70,46 +70,48 @@ body {
 }
 
 .info-steps {
-  margin-top: 2rem;
+  margin-top: 2.5rem;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 2rem;
 }
 
 .step h3 {
   color: var(--accent-main);
   margin-bottom: 0.5rem;
+  font-weight: 600;
 }
 
 .good-luck {
-  margin-top: 2rem;
+  margin-top: 3rem;
   font-size: 1.2rem;
-  font-weight: 600;
-  color: #fff;
+  font-weight: 500;
+  color: var(--text-secondary);
 }
 
 .login-panel {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 3rem;
+  padding: 4rem;
 }
 
 .login-form-container {
   width: 100%;
-  max-width: 350px;
+  max-width: 380px;
 }
 
 .login-form-container h2 {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
+  font-size: 2.25rem;
+  margin-bottom: 0.75rem;
   text-align: center;
+  font-weight: 600;
 }
 
 .login-form-container p {
   color: var(--text-secondary);
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 }
 
 .form-group {
@@ -118,18 +120,26 @@ body {
 
 .form-group label {
   display: block;
-  margin-bottom: 8px;
-  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--text-secondary);
 }
 
 .form-group input {
   width: 100%;
-  padding: 10px;
+  padding: 12px 16px;
   border: 1px solid var(--border-color);
-  border-radius: 4px;
-  font-size: 16px;
+  border-radius: 8px;
+  font-size: 1rem;
   background-color: var(--bg-dark);
   color: var(--text-primary);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--accent-main);
+  box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.2);
 }
 
 .password-wrapper {
@@ -138,29 +148,31 @@ body {
 
 .password-toggle {
   position: absolute;
-  right: 10px;
+  right: 16px;
   top: 50%;
   transform: translateY(-50%);
   cursor: pointer;
   user-select: none;
-  font-size: 18px;
+  font-size: 1.25rem;
+  color: var(--text-secondary);
 }
 
 .login-button {
   width: 100%;
-  padding: 12px 20px;
+  padding: 14px 20px;
   border: none;
-  border-radius: 4px;
+  border-radius: 8px;
   background-color: var(--accent-main);
-  color: white;
-  font-size: 16px;
-  font-weight: 600;
+  color: var(--bg-dark);
+  font-size: 1rem;
+  font-weight: 700;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
 .login-button:hover {
   background-color: var(--accent-hover);
+  transform: translateY(-2px);
 }
 
 .error-message {
@@ -172,7 +184,7 @@ body {
 
 .login-footer {
   text-align: center;
-  margin-top: 1.5rem;
+  margin-top: 2rem;
   font-size: 0.9rem;
   color: var(--text-secondary);
 }
@@ -192,7 +204,7 @@ body {
   flex-direction: column;
   align-items: stretch;
   justify-content: flex-start;
-  max-width: 1400px;
+  max-width: 1600px;
   width: 100%;
   margin: 0 auto;
 }
@@ -202,7 +214,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 0;
+  padding: 1.5rem 0;
   margin-bottom: 2rem;
   border-bottom: 1px solid var(--border-color);
 }
@@ -233,9 +245,9 @@ body {
   border: 1px solid var(--border-color);
   color: var(--text-primary);
   cursor: pointer;
-  border-radius: 6px;
+  border-radius: 8px;
   font-weight: 500;
-  padding: 8px 16px;
+  padding: 10px 20px;
   transition: background-color 0.2s, border-color 0.2s;
 }
 
@@ -245,13 +257,15 @@ body {
 }
 
 #logout-button {
-  background-color: var(--accent-red);
-  border-color: transparent;
+  background-color: transparent;
+  border: 1px solid var(--accent-red);
+  color: var(--accent-red);
 }
 
 #logout-button:hover {
-  background-color: #f87171;
-  border-color: transparent;
+  background-color: var(--accent-red);
+  border-color: var(--accent-red);
+  color: var(--text-primary);
 }
 
 .audits-container {
@@ -263,74 +277,69 @@ body {
   top: 100%;
   right: 0;
   margin-top: 0.5rem;
-  width: 320px;
+  width: 350px;
   max-height: 400px;
   overflow-y: auto;
   background-color: var(--bg-medium);
   border: 1px solid var(--border-color);
-  border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(217, 63, 63, 0.2);
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
   z-index: 100;
-  padding: 10px;
+  padding: 0.75rem;
 }
 
 .audit-item {
   background: var(--bg-dark);
-  padding: 14px;
-  margin-bottom: 10px;
+  padding: 1rem;
+  margin-bottom: 0.5rem;
   border-radius: 8px;
   border-left: 4px solid var(--accent-main);
 }
 
-/* In styles.css, find and update these rules */
-
 .profile-content {
   width: 100%;
-  /* Add a gap to the main content area to space out the major sections */
   display: flex;
   flex-direction: column;
-  gap: 1.5rem; /* This is the key change for vertical spacing */
+  gap: 2rem;
 }
 
 .card {
   background-color: var(--bg-medium);
-  padding: 1.5rem; /* Unified padding */
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  --bg-medium: #1e293b;
-  /* Remove margin-bottom from here, as the parent gap will handle it */
+  padding: 2rem;
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
 }
 
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem; /* Unified gap */
-  /* Remove margin-top from here */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
 }
 
 .graphs-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.5rem; /* Unified gap */
-  /* Remove margin-top from here */
+  gap: 2rem;
 }
 
 .card h2 {
-  color: var(--accent-main);
-  margin-bottom: 15px;
-  padding-bottom: 10px;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
   border-bottom: 1px solid var(--border-color);
   font-size: 1.25rem;
-  font-weight: 500;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
-/* User Info Card from previous answer */
 #user-info h2 {
   font-size: 1.75rem;
   font-weight: 300;
   text-align: center;
-  color: var(--text-primary); /* Overriding generic h2 color */
+  color: var(--text-primary);
+  border-bottom: none;
 }
+
 .welcome-username-toggle {
   font-weight: 600;
   color: var(--accent-main);
@@ -338,78 +347,76 @@ body {
   border-bottom: 2px dotted transparent;
   transition: all 0.2s ease-in-out;
 }
+
 .welcome-username-toggle:hover {
   color: var(--accent-hover);
   border-bottom-color: var(--accent-hover);
 }
-.user-details-panel { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; margin-top: 1rem; }
-.user-details-panel.visible { max-height: 250px; }
-.user-detail-item { display: flex; justify-content: space-between; padding: 0.75rem 0.25rem; border-bottom: 1px solid var(--border-color); }
+
+.user-details-panel { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; margin-top: 1.5rem; }
+.user-details-panel.visible { max-height: 300px; }
+.user-detail-item { display: flex; justify-content: space-between; padding: 1rem 0.5rem; border-bottom: 1px solid var(--border-color); }
 .user-detail-item:last-child { border-bottom: none; }
 .detail-label { font-weight: 500; color: var(--text-secondary); }
 
-/* Stat Display Circles/Boxes */
 .xp-display, .level-display, .audit-display {
-  display: flex; flex-direction: column; align-items: center; gap: 10px; margin-top: 15px;
+  display: flex; flex-direction: column; align-items: center; gap: 1rem; margin-top: 1rem;
 }
-.level-circle, .audit-ratio-box {
-  width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;
-  font-size: 32px; font-weight: bold; color: white; margin: 0 auto 10px;
-}
-.level-circle { background: var(--accent-main); border-radius: 50%; }
-.audit-ratio-box { border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
-.level-label, .audit-label { font-size: 14px; color: var(--text-secondary); }
 
-.xp-total-box {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  
-  /* --- THE FIX --- */
-  color: #6366f1; 
-  font-size: 1.5rem;
-  font-weight: 600;
-  text-align: center;
-  transition: background-color 0.3s ease, color 0.3s ease; /* Also transition color */
+.level-circle, .xp-total-box {
+  width: 100px; height: 100px; display: flex; align-items: center; justify-content: center;
+  font-size: 2.5rem; font-weight: 700; color: var(--text-primary); margin: 0 auto 1rem;
 }
-.xp-summary { text-align: center; margin-top: 1rem; }
 
-/* Skills and Graphs */
+.level-circle { background: var(--accent-main); color: var(--bg-dark); border-radius: 50%; }
+.xp-total-box { font-size: 1.75rem; text-align: center; }
+
+.audit-ratio-box {
+  font-size: 2.5rem; font-weight: 700; color: var(--text-primary);
+}
+
+.level-label, .audit-label { font-size: 1rem; color: var(--text-secondary); }
+
+.xp-summary { text-align: center; margin-top: 1rem; font-size: 1rem; color: var(--text-secondary); }
+
 #skills-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
-}
-.skill-circle svg {
-  width: 100px;
-  height: 100px;
-}
-#xp-graph, #audit-graph {
-  background-color: var(--bg-dark);
-  border-radius: 8px;
-  padding: 10px;
+  gap: 1.5rem;
+  padding: 1rem 0;
 }
 
+.skill-circle svg {
+  width: 120px;
+  height: 120px;
+}
+
+#xp-graph, #audit-graph {
+  background-color: var(--bg-dark);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
 
 /* Responsive adjustments */
 @media (max-width: 900px) {
   .login-wrapper {
-      grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
   }
   .welcome-panel {
-      display: none;
+    display: none;
+  }
+  .page-container {
+    padding: 1rem;
+  }
+  .profile-header {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .stats-grid {
+    grid-template-columns: 1fr;
   }
 }
-@media (max-width: 600px) {
-  .page-container { padding: 1rem; }
-  .profile-header { flex-direction: column; gap: 1rem; }
-  .stats-grid { grid-template-columns: 1fr; }
-}
-/* Add this CSS to your stylesheet */
 
 /* Style for the button when there are no audits */
 #audits-btn.no-audits {
