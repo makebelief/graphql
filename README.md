@@ -2,7 +2,7 @@
 
 Welcome to the GraphQL Profile Page project! This application provides a clean and interactive UI to view user profile data from the Zone01 Kisumu platform, fetched using the power of GraphQL.
 
-![Project Banner](https://via.placeholder.com/800x200.png?text=GraphQL+Profile+Dashboard) <!-- Replace with a real banner image -->
+![Project Preview](src/styles/preview.png)
 
 ## 🚀 Overview
 
@@ -69,7 +69,7 @@ If you have a suggestion that would make this better, please fork the repo and c
 
 ## 👨‍💻 Author
 
-This project was created and is maintained by **svictor**.
+This project was created and is maintained by **shayo victor**.
 
 ---
 
