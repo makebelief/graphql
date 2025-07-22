@@ -1,0 +1,18 @@
+{
+  "name": "graphql-project",
+  "version": "1.0.0",
+  "description": "GraphQL Project Structure",
+  "main": "src/server/index.js",
+  "scripts": {
+    "start": "node src/server/index.js",
+    "dev": "nodemon src/server/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "apollo-server": "^3.0.0",
+    "graphql": "^16.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
