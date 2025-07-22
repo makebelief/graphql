@@ -6,6 +6,8 @@ Welcome to the GraphQL Profile Page project! This application provides a clean a
 
 ## 🚀 Overview
 
+**[Live Demo](https://makebelief.github.io/graphql/)**
+
 This project authenticates a user with Zone01 Kisumu, fetches their profile data—including identity, XP, skills, and audit performance—and presents it in a visually appealing and easy-to-understand dashboard.
 
 - **GraphQL API Endpoint**: `https://learn.zone01kisumu.ke/api/graphql-engine/v1/graphql`
